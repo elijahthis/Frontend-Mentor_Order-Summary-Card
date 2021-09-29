@@ -1,3 +1,11 @@
+@font-face {
+    font-family: RedHatDisplay-Regular;
+    src: url("fonts/RedHatDisplay-Regular.otf");
+}
+@font-face {
+    font-family: RedHatDisplay-Bold;
+    src: url("fonts/RedHatDisplay-Bold.otf");
+}
 :root {
     --pale-blue: hsl(225, 100%, 94%);
     --bright-blue: hsl(245, 75%, 52%);
@@ -6,23 +14,319 @@
     --dark-blue: hsl(223, 47%, 23%);
 }
 
+
+@media screen and (min-width: 667px) {
+/* For Laptop Screens */
 body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-family: 'Red Hat Display', sans-serif;
+    align-items: center;
+    font-family: 'RedHatDisplay-Regular', sans-serif;
+    font-weight: 500;
+    min-height: 100vh;
+    /* overflow: scroll; */
+    margin: 0;
+
+    background-image: url("images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-color: hsl(225, 100%, 94%);
+    background-size: contain;
+
 }
 
 main {
-    width: 425px;
-    height: 597px;
+    width: 450px;
+    height: 630px;
+    box-sizing: border-box;
     border-radius: 20px;
+    box-shadow: 0 0 24px 0px rgba(0, 0, 0, 0.5);
 }
 
 main > :first-child {
     width: inherit;
-    height: 186px;
+    height: 210px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-image: url("images/illustration-hero.svg");
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 420px;
+    background-color: #FFFFFF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+h3 {
+    font-size: 32px;
+    font-family: 'RedHatDisplay-Bold', sans-serif;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.card-content > :nth-child(2) {
+    width: 350px;
+    color: var(--desaturated-blue);
+    margin: 0px;
+}
+
+.plan-box {
+    width: 350px;
+    height: 100px;
+    padding: 25px 20px;
+    background-color: hsl(230, 75%, 98%);
+    border-radius: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.music-circle {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(227, 78%, 93%);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-name {
+    width: 140px;
+    text-align: left;
+}
+
+.plan-name > :first-child {
+    font-family: 'RedHatDisplay-Bold', sans-serif;
+    color: var(--dark-blue);
+    margin: 7px 0px;
+}
+.plan-name > :nth-child(2) {
+    font-family: 'RedHatDisplay-Regular', sans-serif;
+    color: var(--desaturated-blue);
+    margin: 7px 0px;
+}
+
+#change {
+    font-family: 'RedHatDisplay-Bold', sans-serif;
+    color: var(--bright-blue);
+    text-decoration: underline;
+    transition: color 2s;
+}
+#change:hover {
+    color: hsl(245, 87%, 77%);
+    text-decoration: none;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+
+    font-family: 'RedHatDisplay-Bold', sans-serif;
+}
+
+.actions >* {
+    padding: 12px 0px;
+    width: 350px;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.actions >:nth-child(1) { 
+    color: #FFFFFF;
+    background-color: var(--bright-blue);
+    transition: background-color 2s;
+    box-shadow: 0px 5px 20px rgba(12, 7, 70, 0.5);
+}
+.actions >:nth-child(1):hover { 
+    color: #FFFFFF;
+    background-color: hsl(245, 83%, 68%);
+}
+
+
+.actions >:nth-child(2) { 
+    color: var(--desaturated-blue);
+    transition: color 2s;
+}
+.actions >:nth-child(2):hover { 
+    color: var(--dark-blue);
+}
+
+}
+
+
+@media screen and (max-width: 667px) {
+    /* For mobile devices */
+    :root {
+        --box-width-val: 320px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: 'RedHatDisplay-Regular', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        min-height: 100vh;
+
+        margin: 0;
+    
+        background-image: url("images/pattern-background-mobile.svg");
+        background-repeat: no-repeat;
+        background-color: hsl(225, 100%, 94%);
+        background-size: contain;
+    
+    }
+    
+    main {
+        width: 370px;
+        height: 600px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        box-shadow: 0 0 24px 0px rgba(0, 0, 0, 0.5);
+    }
+    
+    main > :first-child {
+        width: inherit;
+        height: 180px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background-image: url("images/illustration-hero.svg");
+        background-size: contain;
+    }
+    
+    
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        height: 420px;
+        background-color: #FFFFFF;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+    h3 {
+        font-size: 26px;
+        font-family: 'RedHatDisplay-Bold', sans-serif;
+        font-weight: 800;
+        color: var(--dark-blue);
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+    
+    .card-content > :nth-child(2) {
+        width: 250px;
+        color: var(--desaturated-blue);
+        margin: 0px;
+    }
+    
+    .plan-box {
+        width: var(--box-width-val);
+        height: 100px;
+        /* padding: 25px 20px; */
+        background-color: hsl(230, 75%, 98%);
+        border-radius: 20px;
+        box-sizing: border-box;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .music-circle {
+        width: 50px;
+        height: 50px;
+        background-color: hsl(227, 78%, 93%);
+        border-radius: 50%;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .plan-name {
+        width: 150px;
+        text-align: left;
+    }
+    
+    .plan-name > :first-child {
+        font-family: 'RedHatDisplay-Bold', sans-serif;
+        color: var(--dark-blue);
+        margin: 7px 0px;
+    }
+    .plan-name > :nth-child(2) {
+        font-family: 'RedHatDisplay-Regular', sans-serif;
+        color: var(--desaturated-blue);
+        margin: 7px 0px;
+    }
+    
+    #change {
+        font-family: 'RedHatDisplay-Bold', sans-serif;
+        color: var(--bright-blue);
+        text-decoration: underline;
+        transition: color 2s;
+    }
+    #change:hover {
+        color: hsl(245, 87%, 77%);
+        text-decoration: none;
+    }
+    
+    .actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
+    
+        font-family: 'RedHatDisplay-Bold', sans-serif;
+    }
+    
+    .actions >* {
+        padding: 12px 0px;
+        width: var(--box-width-val);
+        border-radius: 7px;
+        text-decoration: none;
+    }
+    
+    .actions >:nth-child(1) { 
+        color: #FFFFFF;
+        background-color: var(--bright-blue);
+        transition: background-color 2s;
+        box-shadow: 0px 5px 20px rgba(12, 7, 70, 0.5);
+    }
+    .actions >:nth-child(1):hover { 
+        color: #FFFFFF;
+        background-color: hsl(245, 83%, 68%);
+    }
+    
+    
+    .actions >:nth-child(2) { 
+        color: var(--desaturated-blue);
+        transition: color 2s;
+    }
+    .actions >:nth-child(2):hover { 
+        color: var(--dark-blue);
+    }
 }
